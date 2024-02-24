@@ -15,7 +15,7 @@ export const IndividualEventPage = ({ event }: { event: EventPageData | null }) 
         <Container className="p-5 flex flex-col" style={{marginBottom: theme.spacing.xl, backgroundColor: "transparent"}}>
             <Text variant="h1" style={{marginTop: theme.spacing.md, marginBottom: theme.spacing.md}}>{event.name}</Text>
             <Divider style={{marginTop: theme.spacing.xl, marginBottom: theme.spacing.xl}}/>
-            <span className="m-5 py-2 px-5 rounded-full font-bold text-center" style={{backgroundColor: theme.colors.info}}>{event.freeEvent ? "Free" : (event.price ?? "No Price")}</span>
+            <span className="m-5 py-2 px-5 rounded-full font-bold text-center text-white" style={{backgroundColor: theme.colors.info}}>{event.freeEvent ? "Free" : ("Price: $" + event.price ?? "No Price")}</span>
             <Image width={300} height={300} src={event.poster.url} alt={event.name + " poster"} className="my-5 mx-auto" style={{borderRadius: theme.borderRadius.xs, overflow: "hidden"}} priority/>
             <Text className="font-bold">{localDate}</Text>
             <Text variant="body1">{event.description}</Text>

@@ -2,11 +2,11 @@ import axios from "axios";
 import { EventPageData } from "../../../../types";
 import { IndividualEventPage } from "@/features/events/components/IndividualEventPage";
 
-async function getEventPageData(): Promise<EventPageData | null> {
+async function getEventPageData(slug: string): Promise<EventPageData | null> {
     const response = await axios.post(process.env.HYGRAPH_CONTENT_URL, JSON.stringify({
         query: `
         {
-            events {
+            events (where: {eventSlug: "${slug}"}) {
               name
               eventSlug
               eventDate
@@ -40,8 +40,8 @@ async function getEventPageData(): Promise<EventPageData | null> {
     return response;
 }
 
-export default async function Event() {
-    const data = await getEventPageData();
+export default async function Event({params}: {params: { slug: string }}) {
+    const data = await getEventPageData(params.slug);
     return (
         <IndividualEventPage
             event={data}
