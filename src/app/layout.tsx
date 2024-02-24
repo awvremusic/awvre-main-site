@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Zen_Antique } from "next/font/google";
 import "./globals.css";
 import { PageContainer } from "@/features/common/components/PageContainer";
 
 const inter = Inter({ subsets: ["latin"] });
+const zenAntique = Zen_Antique({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +22,7 @@ export default function RootLayout({
   return (
     
       <html lang="en">
-        <body className={inter.className}>
+        <body className={[inter.className, zenAntique.className].join(" ")}>
         <PageContainer>
         {children}
         </PageContainer>

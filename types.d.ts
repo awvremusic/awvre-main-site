@@ -67,3 +67,10 @@ interface EventPageData {
     ticketingUrl: string | null
     description: string
 }
+
+interface PressKitPageData {
+    imageUrls: string[];
+    description: string;
+    primaryColor: string;
+    secondaryColor: string;
+}

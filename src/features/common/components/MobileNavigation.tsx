@@ -47,6 +47,10 @@ export const MobileNavigation = () => {
                 <Link href="/bio">
                     <Text variant="h4" onClick={() => setIsOpen(false)}>Bio</Text>
                 </Link>
+                <Divider className='mt-10'/>
+                <Link href="/press-kit">
+                    <Text variant="h4" onClick={() => setIsOpen(false)}>Press Kit</Text>
+                </Link>
                 </div>
             </Drawer>
         </>

@@ -10,7 +10,7 @@ export const BioPage = ({ data }: { data: BioPageData | null }) => {
     }
     return (
         <Container className="flex flex-col justify-cente p-5" style={{backgroundColor: theme.colors.background}}>
-            <Image width={250} height={250} src={data.profileImage.url} style={{width: "25vh", height: "25vh", maxWidth: 700, maxHeight: 700, margin: "auto"}} className="rounded-full overflow-hidden" alt={data.heading + "profile pic"}/>
+            <Image width={250} height={250} src={data.profileImage.url} style={{width: "25vh", height: "25vh", maxWidth: 700, maxHeight: 700, margin: "auto"}} className="rounded-full overflow-hidden" alt={data.heading + "profile pic"} priority/>
             <Text variant="h1" className="text-center mt-5 mb-5">{data.heading}</Text>
             <Text variant="body1" className="text-center" style={{marginTop: theme.spacing.md, marginBottom: theme.spacing.md }}>{data.description}</Text>
             <div className="flex flex-row flex-wrap justify-center items-center gap-5 mr-auto ml-auto mt-5 mb-5" style={{maxWidth: 750}}>

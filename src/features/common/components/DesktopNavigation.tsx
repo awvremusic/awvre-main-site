@@ -2,6 +2,8 @@ import { AWVRENameLogoV1, Container, Tab, Tabs, useAWVRETheme } from "@awvremusi
 import { useSiteNavigation } from "../hooks/useSiteNavigation";
 import React from "react";
 
+const AWVRELogo =<AWVRENameLogoV1 height={"3.5vh"} className="cursor-pointer mr-5"/>
+
 export const DesktopNavigation = () => {
     const { theme } = useAWVRETheme();
     const {
@@ -41,9 +43,9 @@ export const DesktopNavigation = () => {
             className="sticky top-0 left-0 right-0 z-50 h-16 shadow-sm px-4 py-2"
             style={{backgroundColor: theme.colors.container}}
         >
-            <Container className="flex gap-5 items-center">
-                <AWVRENameLogoV1 height={"3vh"}/>
-                <Tabs initialTab={currentTab}>
+            <Container>
+                <Tabs initialTab={currentTab} className="flex gap-5 items-center">
+                    <Tab value={"1"} label="Home" onClick={goToHome} component={AWVRELogo}/>
                     <Tab value={"1"} label="Home" onClick={goToHome}/>
                     <Tab value={"2"} label="Music" onClick={goToMusic}/>
                     <Tab value={"3"} label="Events" onClick={goToEvents}/>
