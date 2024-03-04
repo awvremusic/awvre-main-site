@@ -4,5 +4,6 @@ namespace NodeJS {
         PORT: string;
         HYGRAPH_CONTENT_URL: string;
         HYGRAPH_API_KEY: string;
+        WEBHOOK_SECRET: string;
     }
 }

@@ -6,7 +6,7 @@ async function getEventPageData(slug: string): Promise<EventPageData | null> {
     const response = await axios.post(process.env.HYGRAPH_CONTENT_URL, JSON.stringify({
         query: `
         {
-            events (where: {eventSlug: "${slug}"}) {
+            event (where: {eventSlug: "${slug}"}) {
               name
               eventSlug
               eventDate
@@ -29,7 +29,7 @@ async function getEventPageData(slug: string): Promise<EventPageData | null> {
         }
     }).then((response) => {
         if (response.status === 200) {
-            return response.data.data.events[0]
+            return response.data.data.event
         }
         return null
     }).catch((error) => {
