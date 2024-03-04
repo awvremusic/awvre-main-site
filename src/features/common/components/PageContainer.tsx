@@ -36,10 +36,10 @@ export const PageContainer = ({children}: {children: React.ReactNode}) => {
     AWVRELightTheme
     return (
         <AWVREProvider
-        customTheme={{
-            light: {...AWVRELightTheme, fontFamily: { ...AWVRELightTheme.fontFamily, serif: "Zen Antique, Kaisei HarunoUmi, Noto Serif, Cambria, Times New Roman, Times, serif"}},
-            dark: {...AWVREDarkTheme, fontFamily: { ...AWVRELightTheme.fontFamily, serif: "Zen Antique, Kaisei HarunoUmi, Noto Serif, Cambria, Times New Roman, Times, serif"}}
-        }}
+        // customTheme={{
+        //     light: {...AWVRELightTheme, fontFamily: { ...AWVRELightTheme.fontFamily, serif: "Zen Antique, Kaisei HarunoUmi, Noto Serif, Cambria, Times New Roman, Times, serif"}},
+        //     dark: {...AWVREDarkTheme, fontFamily: { ...AWVRELightTheme.fontFamily, serif: "Zen Antique, Kaisei HarunoUmi, Noto Serif, Cambria, Times New Roman, Times, serif"}}
+        // }}
         >
             <GlobalStyles />
             {isMobile ? <MobileNavigation /> : <DesktopNavigation />}
