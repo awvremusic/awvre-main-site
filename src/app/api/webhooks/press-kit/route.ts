@@ -9,4 +9,6 @@ export async function POST(req: Request) {
     }
 
     revalidatePath('/press-kit');
+
+    return new Response('OK', { status: 200 });
 }

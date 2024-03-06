@@ -10,4 +10,6 @@ export async function POST(req: Request) {
 
     revalidatePath('/events');
     revalidatePath('/events/[slug]', 'page');
+
+    return new Response('OK', { status: 200 });
 }
