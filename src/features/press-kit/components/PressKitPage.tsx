@@ -20,7 +20,7 @@ export const PressKitPage = ({data}: {data: PressKitPageData}) => {
     <Container className="p-5" style={{backgroundColor: "transparent"}}>
       <Text variant="h1" className="mb-10">Press Kit</Text>
         <AWVRENameLogoV1 height={"10vh"} fill={"#000"}/>
-        <Text variant="body1" className="font-bold mt-5 mb-5">Pronounced: Uh-Wehr</Text>
+        {/* <Text variant="body1" className="font-bold mt-5 mb-5">Pronounced: Uh-Wehr</Text> */}
         <Text variant="body1" className="mt-5 mb-5">This is the official AWVRE name logo. We would like to keep this in black, white, or the primary color as shown below</Text>
         <Text variant="h2" className="my-10">Description</Text>
         <Text variant="body1" className="mb-5">{data.description}</Text>
