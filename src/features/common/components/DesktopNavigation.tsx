@@ -5,6 +5,8 @@ import React from "react";
 const AWVRELogo =<AWVRENameLogoV1 height={"3.5vh"} className="cursor-pointer mr-5"/>
 
 export const DesktopNavigation = () => {
+    const [currentTab, setCurrentTab] = React.useState("1");
+
     const { theme } = useAWVRETheme();
     const {
         goToHome,
@@ -13,18 +15,6 @@ export const DesktopNavigation = () => {
         goToEvents,
         currentPath,
     } = useSiteNavigation();
-
-    const [currentTab, setCurrentTab] = React.useState(() => {
-        if (currentPath === "/") {
-            return "1";
-        } else if (currentPath === "/music") {
-            return "2";
-        } else if (currentPath === "/bio") {
-            return "3";
-        } else {
-            return "1";
-        }
-    });
 
     React.useEffect(() => {
         if (currentPath === "/") {
@@ -37,6 +27,10 @@ export const DesktopNavigation = () => {
             setCurrentTab("1");
         }
     }, [currentPath]);
+
+    const goToShop = () => {
+        window.location.href = "https://shop.awvremusic.com/";
+    }
     
     return (
         <nav
@@ -49,7 +43,8 @@ export const DesktopNavigation = () => {
                     <Tab value={"1"} label="Home" onClick={goToHome}/>
                     <Tab value={"2"} label="Music" onClick={goToMusic}/>
                     <Tab value={"3"} label="Events" onClick={goToEvents}/>
-                    <Tab value={"4"} label="Bio" onClick={goToBio} />
+                    <Tab value={"4"} label="Shop" onClick={goToShop}/>
+                    <Tab value={"5"} label="Bio" onClick={goToBio} />
                 </Tabs>
             </Container>
         </nav>

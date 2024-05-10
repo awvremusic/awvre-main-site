@@ -15,6 +15,10 @@ export const MobileNavigation = () => {
         setIsOpen(false);
     }
 
+    const goToShop = () => {
+        window.location.href = "https://shop.awvremusic.com/";
+    }
+
     return (
         <>
         <nav
@@ -44,6 +48,10 @@ export const MobileNavigation = () => {
                 <Link href="/events">
                     <Text variant="h4" onClick={() => setIsOpen(false)}>Events</Text>
                 </Link>
+                <Text variant="h4" onClick={() => {
+                    goToShop();
+                    setIsOpen(false);
+                }}>Shop</Text>
                 <Link href="/bio">
                     <Text variant="h4" onClick={() => setIsOpen(false)}>Bio</Text>
                 </Link>
